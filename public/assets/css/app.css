@@ -1,0 +1,1290 @@
+@font-face {
+	font-family: Arcon;
+	src        : url('../fonts/arcon/regular.otf');
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: Arcon;
+	src        : url('../fonts/arcon/redonda.otf');
+	font-weight: 200;
+}
+
+
+@font-face {
+	font-family: Bold;
+	src        : url('../fonts/bold/bold.ttf');
+	font-weight: 100;
+}
+
+* {
+	font-family: Arcon;
+	font-weight: 100;
+	font-size  : 1em;
+	margin     : 0px;
+	padding    : 0px;
+	box-sizing : border-box;
+	outline    : none;
+}
+
+a {
+	text-decoration: none;
+	transition     : all 0.3s ease-out;
+}
+
+img {
+	display: block;
+}
+
+.padding {
+	padding: 80px 0px;
+}
+
+.pdn-btn {
+	padding: 16px 24px;
+}
+
+body {
+	background-color: rgb(255, 255, 255);
+}
+
+	body > button {
+		background-color: transparent;
+		border          : none;
+		position        : fixed;
+		display         : none;
+		width           : 32px;
+		top             : 40px;
+		left            : 40px;
+		z-index         : 500;
+	}
+
+		body > button > span {
+			display         : block;
+			width           : 100%;
+			height          : 1px;
+			background-color: rgb(255, 255, 255);
+			margin-bottom   : 2px;
+			box-shadow      : 0 0 3px rgb(0, 0, 0);
+			transition      : all 0.3s ease-out;
+		}
+
+		body > button > span:last-of-type {
+			margin-bottom: 0px;
+		}
+
+	body > nav {
+		width           : 100%;
+		height          : 100px;
+		background-color: rgb(63, 64, 70);
+		position        : fixed;
+		top             : 0px;
+		left            : 0px;
+		display         : flex;
+		align-items     : center;
+		justify-content : center;
+		box-shadow      : 0 0 8px rgba(0, 0, 0, 0.45);
+		z-index         : 500;
+	}
+
+	body > nav:before {
+		content         : '';
+		width           : 50%;
+		height          : 100px;
+		background-color: rgb(255, 255, 255);
+		transform       : skew(15deg);
+		position        : absolute;
+		left            : -20px;
+		top             : 0px;
+	}
+
+		body > nav > div {
+			width          : 80%;
+			display        : flex;
+			flex-flow      : row wrap;
+			justify-content: space-between;
+			align-items    : center;
+			position       : relative;
+		}
+
+			body > nav > div > a {
+				display : inline-block;
+				height  : 50px;
+				position: relative;
+			}
+
+				body > nav > div > a > img {
+					height: 100%;
+				}
+
+			body > nav > div > a:before {
+				content         : '';
+				width           : 100%;
+				height          : 1px;
+				background-color: rgb(0, 0, 0);
+				position        : absolute;
+				top             : -8px;
+				left            : 0px;
+				transform       : scale(0);
+				transition      : all 0.3s ease-out;
+			}
+
+			body > nav > div > a:after {
+				content         : '';
+				width           : 100%;
+				height          : 1px;
+				background-color: rgb(0, 0, 0);
+				position        : absolute;
+				bottom          : -8px;
+				right           : 0px;
+				transform       : scale(0);
+				transition      : all 0.3s ease-out;
+			}
+
+			body > nav > div > a:hover:before {
+				transform: scale(1);
+			}
+
+			body > nav > div > a:hover:after {
+				transform: scale(1);
+			}
+
+			body > nav > div > ul {
+				list-style     : none;
+				display        : flex;
+				align-items    : center;
+				justify-content: center;
+			}
+
+				body > nav > div > ul > li {
+					margin-right: 24px;
+				}
+
+				body > nav > div > ul > li:last-of-type {
+					margin-right: 0px;
+				}
+
+					body > nav > div > ul > li > a {
+						color    : rgb(255, 255, 255);
+						position : relative;
+						font-size: 1.25em;
+					}
+
+					body > nav > div > ul > li > a:before {
+						content         : '';
+						width           : 100%;
+						height          : 1px;
+						background-color: rgb(255, 255, 255);
+						position        : absolute;
+						top             : -6px;
+						left            : 0px;
+						transform       : scale(0);
+						transition      : all 0.3s ease-out;
+					}
+
+					body > nav > div > ul > li > a:after {
+						content         : '';
+						width           : 100%;
+						height          : 1px;
+						background-color: rgb(255, 255, 255);
+						position        : absolute;
+						bottom          : -6px;
+						right           : 0px;
+						transform       : scale(0);
+						transition      : all 0.3s ease-out;
+					}
+
+					body > nav > div > ul > li > a:hover:before {
+						transform: scale(1);
+					}
+
+					body > nav > div > ul > li > a:hover:after {
+						transform: scale(1);
+					}
+
+#inicio {
+	width          : 100%;
+	height         : 100vh;
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+	position       : relative;
+	overflow: hidden;
+}
+
+#inicio:before {
+	content         : '';
+	width           : 50%;
+	height          : 100%;
+	background-color: rgba(32, 43, 103, 0.7);
+	position        : absolute;
+	top             : 0px;
+	right           : -97px;
+	transform       : skew(15deg);
+}
+
+	#inicio > div {
+		width         : 80%;
+		display       : flex;
+		align-items   : flex-end;
+		flex-direction: column;
+		position      : relative;
+		color         : rgb(255, 255, 255);
+	}
+
+	#inicio > div:before {
+		content         : '';
+		height          : 300px;
+		width           : 2px;
+		background-color: rgb(255, 255, 255);
+		position        : absolute;
+		right           : -18px;
+		top             : -50px;
+		transform       : skew(15deg);
+	}
+
+		#inicio > div > h1 {
+			font-size  : 2em;
+			white-space: pre-line;
+			text-align : right;
+		}
+
+		#inicio > div > span {
+			display      : inline-block;
+			margin-bottom: 16px;
+		}
+
+		#inicio > div > a {
+			display: inline-block;
+			border : 1px solid rgb(255, 255, 255);
+			color  : rgb(255, 255, 255);
+		}
+
+#nosotros {
+	width          : 100%;
+	position       : relative;
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+	#nosotros > div:first-of-type {
+		width         : 80%;
+		display       : flex;
+		align-items   : flex-end;
+		flex-direction: column;
+		position      : relative;
+		z-index       : 50;
+	}
+
+	#nosotros > div:first-of-type:before {
+		content         : '';
+		height          : 300px;
+		width           : 2px;
+		background-color: rgb(4, 10, 44);
+		position        : absolute;
+		right           : -18px;
+		top             : -50px;
+		transform       : skew(15deg);
+	}
+
+		#nosotros > div:first-of-type > h1 {
+			font-family: Bold;
+			font-size  : 3em;
+			color      : rgb(4, 10, 44);
+		}
+
+		#nosotros > div:first-of-type > sub {
+			font-style   : italic;
+			margin-bottom: 40px;
+			font-size    : 1.25em;
+			display      : inline-block;
+		}
+
+		#nosotros > div:first-of-type > div {
+			width       : 50%;
+			padding-left: 40px;
+		}
+
+			#nosotros > div:first-of-type > div > p {
+				text-align   : justify;
+				margin-bottom: 40px;
+				font-size    : 1.25em;
+			}
+
+			#nosotros > div:first-of-type > div > p:last-of-type {
+				font-style   : italic;
+				color        : rgb(4, 10, 44);
+				margin-bottom: 0px;
+			}
+
+	#nosotros > div:last-of-type {
+		width   : 50%;
+		position: absolute;
+		left    : 0px;
+	}
+
+		#nosotros > div:last-of-type > img {
+			width: 100%;
+		}
+
+#beneficios {
+	width: 100%;
+}
+
+	#beneficios > div {
+		width          : 80%;
+		margin         : auto;
+		display        : flex;
+		align-items    : center;
+		justify-content: center;
+		flex-direction : column;
+	}
+
+		#beneficios > div > h1 {
+			font-family  : Bold;
+			font-size    : 3em;
+			display      : inline-block;
+			margin-bottom: 40px;
+			color        : rgb(255, 255, 255);
+			position     : relative;
+		}
+
+		#beneficios > div > h1:before {
+			content         : '';
+			width           : 100%;
+			height          : 2px;
+			background-color: rgb(255, 255, 255);
+			position        : absolute;
+			top             : 0px;
+			left            : 0px;
+		}
+
+		#beneficios > div > h1:after {
+			content         : '';
+			width           : 100%;
+			height          : 2px;
+			background-color: rgb(255, 255, 255);
+			position        : absolute;
+			bottom          : 0px;
+			right           : 0px;
+		}
+
+		#beneficios > div > div {
+			width          : 100%;
+			display        : flex;
+			flex-flow      : row wrap;
+			justify-content: space-between;
+		}
+
+			#beneficios > div > div > a {
+				display        : flex;
+				align-items    : center;
+				justify-content: flex-start;
+				width          : 50%;
+				padding        : 20px;
+				color          : rgb(255, 255, 255);
+				border         : 1px solid transparent;
+			}
+
+			#beneficios > div > div > a:hover {
+				border: 1px solid rgb(255, 255, 255);
+			}
+
+				#beneficios > div > div > a > span {
+					font-size   : 5em;
+					margin-right: 16px;
+				}
+
+#servicios {
+	width: 100%;
+}
+
+	#servicios > div {
+		width         : 80%;
+		margin        : auto;
+		display       : flex;
+		align-items   : flex-end;
+		flex-direction: column;
+		position      : relative;
+	}
+
+	#servicios > div:before {
+		content         : '';
+		height          : 300px;
+		width           : 2px;
+		background-color: rgb(4, 10, 44);
+		position        : absolute;
+		right           : -18px;
+		top             : -50px;
+		transform       : skew(15deg);
+	}
+
+		#servicios > div > h1 {
+			font-family: Bold;
+			font-size  : 3em;
+			color      : rgb(4, 10, 44);
+		}
+
+		#servicios > div > sub {
+			font-style   : italic;
+			margin-bottom: 40px;
+			font-size    : 1.25em;
+			display      : inline-block;
+		}
+
+		#servicios > div > div {
+			width          : 100%;
+			display        : flex;
+			flex-flow      : row wrap;
+			justify-content: space-between;
+		}
+
+			#servicios > div > div > div {
+				width          : 49%;
+				display        : flex;
+				align-items    : center;
+				justify-content: flex-start;
+				flex-direction : column;
+			}
+
+				#servicios > div > div > div > figure {
+					width        : 100%;
+					position     : relative;
+					margin-bottom: 40px;
+				}
+
+					#servicios > div > div > div > figure > img {
+						width: 100%;
+					}
+
+					#servicios > div > div > div > figure > figcaption {
+						font-family     : Bold;
+						width           : 100%;
+						position        : absolute;
+						bottom          : 0px;
+						text-align      : center;
+						padding         : 16px 0px;
+						background-color: rgb(210, 210, 210);
+						font-size       : 1.25em;
+						color           : rgb(4, 10, 44);
+					}
+
+				#servicios > div > div > div > ul {
+					margin-bottom: 40px;
+				}
+
+					#servicios > div > div > div > ul > li {
+						margin-bottom: 6px;
+						margin-left  : 32px;
+					}
+
+					#servicios > div > div > div > ul > li:last-of-type {
+						margin-bottom: 0px;
+					}
+
+					#servicios > div > div > div > ul > span {
+						font-family  : Bold;
+						display      : block;
+						margin-bottom: 12px;
+						text-align   : center;
+					}
+
+				#servicios > div > div > div > a {
+					display         : inline-block;
+					color           : rgb(255, 255, 255);
+					background-color: rgb(4, 10, 44);
+				}
+
+				#servicios > div > div > div > a:hover {
+					background-color: rgb(0, 0, 0);
+				}
+
+#descanso {
+	width          : 100%;
+	height         : 450px;
+	display        : flex;
+	align-items    : center;
+	justify-content: center;
+	position       : relative;
+	overflow       : hidden;
+}
+
+#descanso:before {
+	content         : '';
+	width           : 50%;
+	background-color: rgb(32, 43, 103);
+	height          : 450px;
+	position        : absolute;
+	right           : -60px;
+	top             : 0px;
+	transform       : skew(15deg);
+}
+
+	#descanso > div:first-of-type {
+		width         : 80%;
+		display       : flex;
+		align-items   : flex-end;
+		flex-direction: column;
+		position      : relative;
+		z-index       : 50;
+		color         : rgb(255, 255, 255);
+	}
+
+	#descanso > div:first-of-type:before {
+		content         : '';
+		height          : 300px;
+		width           : 2px;
+		background-color: rgb(255, 255, 255);
+		position        : absolute;
+		right           : -18px;
+		top             : -50px;
+		transform       : skew(15deg);
+	}
+
+		#descanso > div:first-of-type > h3 {
+			font-size    : 2em;
+			white-space  : pre-line;
+			text-align   : right;
+			margin-bottom: 20px;
+		}
+
+		#descanso > div:first-of-type > a {
+			display: inline-block;
+			border : 1px solid rgb(255, 255, 255);
+			color  : rgb(255, 255, 255);
+		}
+
+	#descanso > div:last-of-type {
+		position: absolute;
+		width   : 60%;
+		height  : 450px;
+		left    : 0px;
+		top     : 0px;
+	}
+
+#galeria {
+	width: 100%;
+}
+
+	#galeria > div {
+		width          : 80%;
+		margin         : auto;
+		display        : flex;
+		align-items    : center;
+		justify-content: center;
+		flex-direction : column;
+	}
+
+		#galeria > div > h1 {
+			font-family  : Bold;
+			font-size    : 3em;
+			display      : inline-block;
+			margin-bottom: 40px;
+			color        : rgb(4, 10, 44);
+			position     : relative;
+		}
+
+		#galeria > div > h1:before {
+			content         : '';
+			width           : 100%;
+			height          : 2px;
+			background-color: rgb(4, 10, 44);
+			position        : absolute;
+			top             : 0px;
+			left            : 0px;
+		}
+
+		#galeria > div > h1:after {
+			content         : '';
+			width           : 100%;
+			height          : 2px;
+			background-color: rgb(4, 10, 44);
+			position        : absolute;
+			bottom          : 0px;
+			right           : 0px;
+		}
+
+		#galeria > div > div {
+			width   : 100%;
+			height  : 400px;
+			position: relative;
+		}
+
+		.galeria {
+			width          : 100%;
+			display        : flex;
+			flex-flow      : row wrap;
+			justify-content: space-between;
+		}
+
+			.galeria > a {
+				display: inline-block;
+				width  : 24%;
+			}
+
+				.galeria > a > img {
+					width: 100%;
+				}
+
+#contacto {
+	width           : 100%;
+	background-color: rgb(32, 43, 103);
+}
+
+	#contacto > div {
+		width          : 80%;
+		margin         : auto;
+		display        : flex;
+		flex-flow      : row wrap;
+		justify-content: space-between;
+		align-items    : center;
+		position       : relative;
+	}
+
+	#contacto > div:before {
+		content         : '';
+		height          : 300px;
+		width           : 2px;
+		background-color: rgb(255, 255, 255);
+		position        : absolute;
+		right           : -18px;
+		top             : -50px;
+		transform       : skew(15deg);
+	}
+
+		#contacto > div > div:first-of-type {
+			width         : 50%;
+			display       : flex;
+			align-items   : flex-start;
+			flex-direction: column;
+		}
+
+			#contacto > div > div:first-of-type > img {
+				width: 75%;
+			}
+
+			#contacto > div > div:first-of-type > a {
+				display         : flex;
+				width           : 40px;
+				height          : 40px;
+				border-radius   : 50%;
+				background-color: rgb(255, 255, 255);
+				color           : rgb(32, 43, 103);
+				align-items     : center;
+				justify-content : center;
+				margin-top      : 40px;
+			}
+
+			#contacto > div > div:first-of-type > a:hover {
+				background-color: rgb(0, 0, 0);
+				color           : rgba(255, 255, 255);
+			}
+
+		#contacto > div > div:last-of-type {
+			width         : 50%;
+			display       : flex;
+			align-items   : flex-end;
+			flex-direction: column;
+		}
+
+			#contacto > div > div:last-of-type > h1 {
+				font-family: Bold;
+				font-size  : 3em;
+				color      : rgb(255, 255, 255);
+			}
+
+			#contacto > div > div:last-of-type > sub {
+				font-style   : italic;
+				margin-bottom: 40px;
+				display      : inline-block;
+				color        : rgb(255, 255, 255);
+			}
+
+			#contacto > div > div:last-of-type > form {
+				width          : 100%;
+				display        : flex;
+				flex-flow      : row wrap;
+				justify-content: space-between;
+			}
+
+				#contacto > div > div:last-of-type > form > figure {
+					display   : none;
+					width     : 100%;
+					margin-top: 40px;
+				}
+
+					#contacto > div > div:last-of-type > form > figure > img {
+						width : 40px;
+						margin: auto;
+					}
+
+				#contacto > div > div:last-of-type > form > div {
+					width        : 49%;
+					margin-bottom: 16px;
+				}
+
+				#contacto > div > div:last-of-type > form > div:nth-of-type(n+5) {
+					width: 100%;
+				}
+
+				#contacto > div > div:last-of-type > form > div:last-of-type {
+					margin-bottom: 0px;
+				}
+
+					#contacto > div > div:last-of-type > form > div > input,
+					#contacto > div > div:last-of-type > form > div > textarea {
+						width           : 100%;
+						background-color: transparent;
+						border          : 1px solid rgb(255, 255, 255);
+						padding         : 8px;
+						color           : rgb(255, 255, 255); 
+					}
+
+					#contacto > div > div:last-of-type > form > div > input::placeholder,
+					#contacto > div > div:last-of-type > form > div > textarea::placeholder {
+						color: rgb(255, 255, 255); 
+					}
+
+					#contacto > div > div:last-of-type > form > div > button {
+						background-color: rgba(255, 255, 255, 0.75);
+						display         : block;
+						cursor          : pointer;
+						padding         : 8px;
+						color           : rgb(32, 43, 103);
+						width           : 100%;
+						text-align      : center;
+						border          : none;
+						transition      : all 0.3s ease-out;
+					}
+
+					#contacto > div > div:last-of-type > form > div > button:hover {
+						background-color: rgb(255, 255, 255);
+					}
+
+					#contacto > div > div:last-of-type > form > div > div {
+						width           : 100%;
+						background-color: rgb(234, 0, 0);
+						color           : rgb(255, 255, 255);
+						padding         : 6px;
+						font-size       : 0.85em;
+						display         : none;
+					}
+
+body > footer {
+	width           : 100%;
+	background-color: rgb(255, 255, 255);
+}
+
+	body > footer > div {
+		width     : 100%;
+		text-align: center;
+		padding   : 16px;
+		border-top: 1px solid rgb(3, 9, 43);
+	}
+
+		body > footer > div > strong {
+			font-family: Bold;
+		}
+
+		body > footer > div > a {
+			display  : inline-block;
+			font-size: 0.85em;
+			color    : rgb(0, 0, 0);
+		}
+
+		body > footer > div > a:hover {
+			color: rgb(234, 0, 0);
+		}
+
+@media screen and (max-width: 1440px) {
+	body > nav > div {
+		width: 85%;
+	}
+
+	#inicio:before {
+		right: -80px;
+	}
+
+		#inicio > div {
+			width: 85%;
+		}
+
+		#inicio > div:before {
+			right: -22px;
+		}
+
+	#nosotros > div:first-of-type {
+		width: 85%;
+	}
+
+	#beneficios > div {
+		width: 85%;
+	}
+
+	#servicios > div {
+		width: 85%;
+	}
+
+	#descanso > div:first-of-type {
+		width: 85%;
+	}
+
+	#descanso > div:first-of-type:before {
+		right: -22px;
+	}
+
+	#galeria > div {
+		width: 85%;
+	}
+
+	#contacto > div {
+		width: 85%;
+	}
+}
+
+@media all and (orientation: landscape) and (max-width: 1370px) {
+	body > button {
+		display: block;
+	}
+
+	.active-btn {
+		margin-bottom   : 4px;
+		background-color: rgb(0, 0, 0);
+		box-shadow      : none;
+	}
+
+	.active-btn:last-of-type {
+		margin-bottom: 0px;
+	}
+
+	body > nav {
+		width     : 100%;
+		height    : 100vh;
+		position  : fixed;
+		top       : 0px;
+		left      : 0px;
+		z-index   : 450;
+		margin-top: -100vh;
+		opacity   : 0;
+		transition: all 0.3s ease-out;
+	}
+
+	.active-nav {
+		margin-top: 0px;
+		opacity   : 1;
+	}
+
+	body > nav:before {
+		width    : 100%;
+		height   : 100%;
+		transform: skew(0deg);
+		left     : 0px;
+	}
+
+		body > nav > div {
+			flex-flow      : row nowrap;
+			justify-content: center;
+			flex-direction : column;
+		}
+
+			body > nav > div > a {
+				margin-bottom: 40px;
+			}
+
+			body > nav > div > ul {
+				flex-direction: column;
+			}
+
+				body > nav > div > ul > li {
+					margin-right : 0px;
+					margin-bottom: 16px;
+				}
+
+				body > nav > div > ul > li:last-of-type {
+					margin-bottom: 0px;
+				}
+
+					body > nav > div > ul > li > a {
+						color: rgb(0, 0, 0);
+					}
+
+	#inicio:before {
+		width    : 100%;
+		height   : 100%;
+		transform: skew(0deg);
+		right    : 0px;
+	}
+
+	#descanso {
+		display: none;
+	}
+
+	#galeria {
+		background-color: rgb(220, 220, 220);
+	}
+
+		#galeria > div > div {
+			height: 300px;
+		}
+
+	body > footer > div:first-of-type > div:last-of-type > ul:before {
+		right: -30px;
+	}
+}
+
+@media all and (orientation: landscape) and (max-width: 1030px) {
+	#inicio > div:before {
+		display: none;
+	}
+
+	#nosotros > div:last-of-type {
+		display: none;
+	}
+
+	#nosotros > div:first-of-type:before {
+		display: none;
+	}
+
+		#nosotros > div:first-of-type > div {
+			width  : 100%;
+			padding: 0px;
+		}
+
+			#nosotros > div:first-of-type > div > p {
+				font-size: 1em;
+			}
+
+	#servicios > div:before {
+		display: none;
+	}
+
+	#galeria > div > div {
+		height: 250px;
+	}
+
+	#contacto > div:before {
+		display: none;
+	}
+
+	body > footer > div:first-of-type > div:last-of-type > ul {
+		width: 100%
+	}
+
+	body > footer > div:first-of-type > div:last-of-type > ul:before {
+		display: none;
+	}
+}
+
+@media all and (orientation: landscape) and (max-width: 740px) {
+	body > nav > div > a {
+		height: 30px;
+	}
+
+	body > nav > div > ul > li {
+		margin-bottom: 12px;
+	}
+
+	#nosotros > div:first-of-type > h1 {
+		font-size: 2em;
+	}
+
+	#beneficios > div > h1 {
+		font-size: 2em;
+	}
+
+	#servicios > div > h1 {
+		font-size: 2em;
+	}
+
+		#servicios > div > div > div > figure > figcaption {
+			font-size: 1em;
+		}
+
+		#servicios > div > div > div > span {
+			white-space: normal;
+		}
+
+	#galeria > div > h1 {
+		font-size: 2em;
+	}
+
+	#galeria > div > div {
+		height: 180px;
+	}
+
+	#contacto > div > map {
+		width        : 100%;
+		height       : 250px;
+		margin-bottom: 32px;
+	}
+
+	#contacto > div > div:first-of-type {
+		width        : 100%;
+		margin-bottom: 40px;
+	}
+
+		#contacto > div > div:first-of-type > img {
+			width: 100%;
+		}
+
+	#contacto > div > div:last-of-type {
+		width       : 100%;
+		padding-left: 0px;
+	}
+
+		#contacto > div > div:last-of-type > h1 {
+			font-size: 2em;
+		}
+}
+
+@media all and (orientation: portrait) and (max-width: 1030px) {
+	body > button {
+		display: block;
+	}
+
+	.active-btn {
+		margin-bottom   : 6px;
+		background-color: rgb(0, 0, 0);
+		box-shadow      : none;
+	}
+
+	.active-btn:last-of-type {
+		margin-bottom: 0px;
+	}
+
+	body > nav {
+		width     : 100%;
+		height    : 100vh;
+		position  : fixed;
+		top       : 0px;
+		left      : 0px;
+		z-index   : 450;
+		margin-top: -100vh;
+		opacity   : 0;
+		transition: all 0.3s ease-out;
+	}
+
+	.active-nav {
+		margin-top: 0px;
+		opacity   : 1;
+	}
+
+	body > nav:before {
+		width    : 100%;
+		height   : 100%;
+		transform: skew(0deg);
+		left     : 0px;
+	}
+
+		body > nav > div {
+			flex-flow      : row nowrap;
+			justify-content: center;
+			flex-direction : column;
+		}
+
+			body > nav > div > a {
+				margin-bottom: 40px;
+			}
+
+			body > nav > div > ul {
+				flex-direction: column;
+			}
+
+				body > nav > div > ul > li {
+					margin-right : 0px;
+					margin-bottom: 16px;
+				}
+
+				body > nav > div > ul > li:last-of-type {
+					margin-bottom: 0px;
+				}
+
+					body > nav > div > ul > li > a {
+						color: rgb(0, 0, 0);
+					}
+
+	#inicio:before {
+		width    : 100%;
+		height   : 100%;
+		transform: skew(0deg);
+		right    : 0px;
+	}
+
+		#inicio > div {
+			justify-content: center;
+			align-items: center;
+		}
+
+		#inicio > div:before {
+			display: none;
+		}
+
+			#inicio > div > h1 {
+				text-align: center;
+			}
+
+	#nosotros > div:last-of-type {
+		display: none;
+	}
+
+	#nosotros > div:first-of-type:before {
+		display: none;
+	}
+
+		#nosotros > div:first-of-type > div {
+			width  : 100%;
+			padding: 0px;
+		}
+
+			#nosotros > div:first-of-type > div > p {
+				font-size: 1em;
+			}
+
+	#servicios > div:before {
+		display: none;
+	}
+
+	#descanso {
+		display: none;
+	}
+
+	#galeria {
+		background-color: rgb(220, 220, 220);
+	}
+
+		#galeria > div > div {
+			height: 250px;
+		}
+
+	#contacto > div:before {
+		display: none;
+	}
+
+		#contacto > div > map {
+			width        : 100%;
+			height       : 250px;
+			margin-bottom: 32px;
+		}
+
+		#contacto > div > div {
+			width  : 100%;
+			padding: 0px;
+		}
+
+			#contacto > div > div > h1 {
+				font-size: 2em;
+			}
+
+	body > footer > div:first-of-type > div {
+		width: 100%;
+	}
+
+	body > footer > div:first-of-type > div:first-of-type > img {
+		width: 100%;
+	}
+
+	body > footer > div:first-of-type > div:last-of-type > ul {
+		width        : 100%;
+		top          : 0px;
+		margin-top   : 40px;
+		margin-bottom: 40px;
+		position     : inherit;
+	}
+
+	body > footer > div:first-of-type > div:last-of-type > ul:before {
+		display: none;
+	}
+}
+
+@media all and (orientation: portrait) and (max-width: 770px) {
+	.padding {
+		padding: 40px 0px;
+	}
+
+	#nosotros > div:first-of-type > h1 {
+		font-size: 2em;
+	}
+
+	#beneficios > div > h1 {
+		font-size: 2em;
+	}
+
+	#servicios > div > h1 {
+		font-size: 2em;
+	}
+
+	#servicios > div > div > div {
+		width: 100%;
+	}
+
+	#servicios > div > div > div:first-of-type {
+		margin-bottom: 32px;
+	}
+
+	#servicios > div > div > div > span {
+		white-space: normal;
+	}
+
+	#galeria > div > div {
+		height: 180px;
+	}
+
+	#contacto > div > div:first-of-type {
+		width        : 100%;
+		margin-bottom: 40px;
+	}
+
+		#contacto > div > div:first-of-type > img {
+			width: 100%;
+		}
+
+	#contacto > div > div:last-of-type {
+		width: 100%;
+		padding-left: 0px;
+	}
+}
+
+@media all and (orientation: portrait) and (max-width: 420px) {
+	#inicio > div > h1 {
+		white-space: normal;
+	}
+
+	#nosotros > div:first-of-type > sub {
+		text-align: right;
+	}
+
+	#beneficios > div > div > a {
+		width: 100%;
+	}
+
+	#beneficios > div > h1 {
+		margin-bottom: 20px;
+	}
+
+	#servicios > div > sub {
+		text-align: right;
+	}
+
+	#galeria > div > div {
+		height: 120px;
+	}
+
+	#galeria > div > h1 {
+		font-size: 2em;
+	}
+
+	#contacto > div > div:last-of-type > h1 {
+		font-size: 2em;
+	}
+
+		#contacto > div > div:last-of-type > form > div {
+			width: 100%;
+		}
+
+	body > footer > div {
+		width    : 100%;
+		font-size: 0.75em;
+	}
+}
